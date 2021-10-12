@@ -1,0 +1,16 @@
+.cart__item {
+   list-style: none;
+  font-size: 25px;
+   
+}
+
+.cart-logo {
+    position: relative;
+    left: 70px;
+    cursor: pointer;
+    bottom: 60px;
+}
+
+.fa-shopping-cart {
+    color:green;
+}
