@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Productos = () => {
+const productos = () => {
     return (
         <div>
             <h1>Está es la página de Productos.</h1>
@@ -9,4 +9,4 @@ const Productos = () => {
 }
 
 
-export default Productos;
+export default productos;

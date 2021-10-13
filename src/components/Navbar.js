@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
-import '../../src/components/Navbar.css';
+import CartWidget from './cartWidget';
+import '../../src/Components/navbar.css';
 
 
-const Navbar = () => {
+const navbar = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,4 +37,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default navbar;

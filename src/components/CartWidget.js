@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../src/components/CartWidget.css';
+import '../../src/Components/cartWidget.css';
 
-function CartWidget(props) {
+function cartWidget(props) {
   return (
     <>
       <div className='cart__item'>
@@ -15,4 +15,4 @@ function CartWidget(props) {
   );
 }
 
-export default CartWidget;
+export default cartWidget;
