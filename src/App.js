@@ -1,38 +1,26 @@
-import './app.css';
+import '../src/assets/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './Components/navbar';
-import Ayuda from './Paginas/ayuda';
-import Ofertas from './Paginas/ofertas';
-import Productos from './Paginas/productos';
-import CartWidget from './Components/cartWidget';
-import ItemListContainer from './Components/itemListContainer';
-import itemCount from './Components/itemCount';
-
-
+import Navbar from './components/Navbar';
+import Ayuda from './pages/Ayuda';
+import Ofertas from './pages/Ofertas';
+import Productos from './pages/Productos';
+import ItemListContainer from './components/ItemListContainer';
 
 function app() {
   return (
     <div className="App">
-     <Router>
-       <Navbar/>
-       <hr />
-       <itemCount/>
-       <hr />
-       <Switch>
-         <Route path='/' exact component={ItemListContainer}/>
-         <Route path='/Ofertas' component={Ofertas}/>
-         <Route path='/Productos' component={Productos}/>
-         <Route path='/Ayuda' component={Ayuda}/>
-       </Switch>
-
-       
-       
-     </Router>
-
-
-
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path ="/Ofertas" component={Ofertas} />
+          <Route exact path ="/Productos" component={Productos} />
+          <Route exact path ="/Ayuda" component={Ayuda} />
+          <Route exact path="/"  component={ItemListContainer} />
+        </Switch>
+        
+      </Router>
     </div>
   );
-}
+} 
 
 export default app;

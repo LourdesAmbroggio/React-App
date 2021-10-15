@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ayuda = () => {
+const Ayuda = () => {
     return (
         <div>
             <h1>Esta es la página de Ayuda</h1>
@@ -9,4 +9,4 @@ const ayuda = () => {
 }
 
 
-export default ayuda;
+export default Ayuda;

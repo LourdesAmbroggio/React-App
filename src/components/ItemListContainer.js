@@ -1,17 +1,16 @@
 import React from 'react';
-import '../../src/Assets/inicio.css';
+import ItemCount from '../components/itemCount';
+
 
 
 function itemListContainer(props) {
-    return (
-      <>
-        <div className='Inicio'>
+  return (
+    <>
+      <div className="Inicio">
+       <ItemCount />
+      </div>
+    </>
+  );
+}
 
-         <h1>Está es la página de Inicio</h1>
-        </div>
-      </>
-    );
-  }
-  
-  export default itemListContainer;
-  
+export default itemListContainer;
