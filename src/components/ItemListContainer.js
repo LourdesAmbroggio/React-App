@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCount from '../components/itemCount';
+import ItemList from './ItemList';
 
 
 
@@ -7,7 +7,7 @@ function itemListContainer(props) {
   return (
     <>
       <div className="Inicio">
-       <ItemCount />
+       <ItemList />
       </div>
     </>
   );

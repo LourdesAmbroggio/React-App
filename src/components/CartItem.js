@@ -1,5 +1,5 @@
 import React from 'react'
-import '../assets/ItemCount.css';
+import '../assets/ItemList.css';
 
 const CartItem = ({data, deleteFromCart}) => {
     let {id, name, price, quantity} = data;
