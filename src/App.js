@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Ayuda from './pages/Ayuda';
 import Ofertas from './pages/Ofertas';
 import Productos from './pages/Productos';
-import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function app() {
   return (
@@ -15,7 +15,7 @@ function app() {
           <Route exact path ="/Ofertas" component={Ofertas} />
           <Route exact path ="/Productos" component={Productos} />
           <Route exact path ="/Ayuda" component={Ayuda} />
-          <Route exact path="/"  component={ItemListContainer} />
+          <Route exact path="/"  component={ItemDetailContainer} />
         </Switch>
         
       </Router>

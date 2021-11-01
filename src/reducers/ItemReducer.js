@@ -2,12 +2,12 @@ import { TYPES } from "../components/ItemAction";
 
 export const ItemInitialState = {
  products: [
-     {id: 1, name: "Producto 1", price: "100"},
-     {id: 2, name: "Producto 2", price: "300"},
-     {id: 3, name: "Producto 3", price: "800"},
-     {id: 4, name: "Producto 4", price: "900"},
-     {id: 5, name: "Producto 5", price: "1200"},
-     {id: 6, name: "Producto 6", price: "1050"},
+     {id: 1, img: "https://m.media-amazon.com/images/I/51oXwplJXSL._AC_UX342_.jpg", name: "Vestido Rosa", description: "100 % Poliéster - Cierre de cremallera - Sólo limpieza en seco.", price: "100"},
+     {id: 2, img: "https://image.made-in-china.com/202f0j10gDlUiLdIbvok/Ladies-Summer-V-Necked-Dress-Fashion-Slim-Fit-Dress-for-Party-High-Quality-Elegant-Dress.jpg", name: "Vestido Negro",  description: "Con largo hasta la rodilla, está disponible entre las tallas XS y XXL. ", price: "300"},
+     {id: 3, img: "https://image.made-in-china.com/202f0j10uPhUWgdzHMbk/Ladies-Summer-V-Necked-Dress-Fashion-Slim-Fit-Dress-for-Party-High-Quality-Elegant-Dress.jpg", name: "Vestido Azul", description: "Vestido Remerón con bolsillos, puntilla en el ruedo fabricado en Modal Viscosa con Lycra, adecuado para el uso casual, fiestas y/o cualquier tipo de acontecimiento.", price: "800"},
+     {id: 4, img: "https://image.made-in-china.com/202f0j10pDlGVWmdrBoc/Ladies-Summer-V-Necked-Dress-Fashion-Slim-Fit-Dress-for-Party-High-Quality-Elegant-Dress.jpg", name: "Vestido Bordo", description: "•Talle único.     •Medidas: Ancho de sisa a sisa 42 cm, cadera 64 cm. Largo 78 cm. •Tela: Modal. ", price: "900"},
+     {id: 5, img: "https://m.media-amazon.com/images/I/51V03wmvVLL._AC_UX385_.jpg", name: "Vestido Rojo", description: "Vestido remerón estampado Tela: Modal viscosa Talle único amplio. Hasta 160cm de busto, 93cm de largo", price: "1200"},
+     {id: 6, img: "https://http2.mlstatic.com/D_NQ_NP_871225-MLM25405876449_032017-O.jpg", name: "Vestido Violeta", description: "Vestido de lino con bretel ancho y bolsillos. Botones en parte delantera. Práctico y cómodo!", price: "1050"},
  ],
  cart:[]
 }

@@ -2,10 +2,12 @@ import React from 'react'
 import '../assets/ItemList.css';
 
 const CartItem = ({data, deleteFromCart}) => {
-    let {id, name, price, quantity} = data;
+    let {id, name, price, quantity, img, description} = data;
     return (
         <div className="Carrito-dos">
             <h4 className="Productos">{name}</h4>
+            <img className="img-container" src={img} />
+            <h4>{description}</h4>
             <h5 className="Precio">${price}.00 x {quantity} = ${price * quantity}.00 </h5>
             <br />
             <button className="Carrito-tres" onClick={() => deleteFromCart(id)}>Eliminar uno</button>

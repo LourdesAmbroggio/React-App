@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .navbar-brand {
-color: green;
+color: rgb(255, 255, 255);
 font-family: 'Montserrat', sans-serif;
 font-weight: bold;
 letter-spacing: 10px;
 }
 
 .navbar {
-    background: linear-gradient(70deg, #cdeca3 0%, #d0f8d9 50%);
+    background: linear-gradient(70deg, #f091c5 0%, #eca0d5 50%);
     height: 80px;
     display: flex;
     justify-content: center;

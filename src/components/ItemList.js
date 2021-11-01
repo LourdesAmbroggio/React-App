@@ -1,6 +1,6 @@
 import { useReducer, useState, useEffect } from 'react';
 import { ItemInitialState, ItemReducer } from '../reducers/ItemReducer';
-import Item from './Item';
+import ItemDetail from './ItemDetail';
 import '../assets/ItemList.css';
 import CartItem from './CartItem';
 import { TYPES } from './ItemAction';
@@ -42,7 +42,7 @@ const ItemList = () => {
         <article className="box grid-responsive">
         { showItem ?  
           products.map(element => (
-            <Item key={element.id} data={element} addToCart={addToCart} />
+            <ItemDetail key={element.id} data={element} addToCart={addToCart} />
             ))
           :
           <h3 className="Productos">Aun no hay productos en la lista</h3>

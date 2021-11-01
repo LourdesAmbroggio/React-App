@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .Carrito {
-    border: thin solid rgb(67, 187, 43);
+    border: thin solid rgb(227, 151, 230);
     padding: 1rem;
 }
 
@@ -15,14 +15,14 @@
 padding: 10px;
 width: 150px;
 color: black;
-border-color: rgb(67, 187, 43);
+border-color: rgb(227, 151, 230);
 font-family: 'Montserrat', sans-serif;
 font-weight: bold;
 }
 
 .Carrito-cuatro {
     color: black;
-    border-color: rgb(67, 187, 43);
+    border-color: rgb(227, 151, 230);
     padding: 10px;
     width: 150px;
     margin-top: 5px;
@@ -41,7 +41,7 @@ font-weight: bold;
 
 .Carrito-cinco {
     color: black;
-    border-color: rgb(67, 187, 43);
+    border-color: rgb(227, 151, 230);
     padding: 5px;
     width: 150px;
     margin-top: 5px;
@@ -57,13 +57,13 @@ font-weight: bold;
 .Carrito-titulo {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: darkgreen;
+    color: #f091c5;
 }
 
 .Productos {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: coral;
+    color: #f091c5;
 }
 
 .Precio {

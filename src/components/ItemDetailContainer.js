@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 
 
 
-function itemListContainer(props) {
+function ItemDetailContainer(props) {
   return (
     <>
       <div className="Inicio">
@@ -13,4 +13,4 @@ function itemListContainer(props) {
   );
 }
 
-export default itemListContainer;
+export default ItemDetailContainer;

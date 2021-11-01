@@ -7,7 +7,7 @@ function cartWidget(props) {
     <>
       <div className="cart__item">
         <Link to="/" className="cart-logo">
-          <i class="fas fa-shopping-cart" />
+          <i className="fas fa-shopping-cart" />
         </Link>
       </div>
     </>
