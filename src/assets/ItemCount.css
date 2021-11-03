@@ -1,0 +1,68 @@
+.cardComponent {
+    border: solid 1px black;
+    width: 150px;
+    padding: 1rem;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .counterCard {
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .addToCart {
+    border: solid 1.5px black;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+  }
+  
+  .counterCard span {
+    margin: 0.5rem 0.2rem;
+  }
+  .stockOver {
+    color: red;
+    font-size: 0.8rem;
+  }
+  
+  .fa {
+    color: rgb(255, 255, 255);
+  }
+   
+  .btn-info {
+    background-color:  rgb(227, 151, 230);
+    border: 1px solid rgb(227, 151, 230);
+  }
+   
+  .btn-info:hover {
+   background-color: palevioletred;
+   border: 1px solid rgb(227, 151, 230);
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .texto {
+    color: black;
+    font-size: 25px;
+    margin: 15px;
+  }
+
+  .card-body {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+  }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import '../assets/Navbar.css';
+import Dress from '../assets/images/R.png';
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img src="./R.png" width="50" />
+            <img src={Dress} width="50" />
             DRESS{' '}
           </Link>
           <button
@@ -39,11 +40,6 @@ const Navbar = () => {
                 <Link className="nav-link" to="/Ofertas">
                   Ofertas
                 </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link " to="Ayuda">
-                  Ayuda
-                </Link>{' '}
                 <CartWidget />
               </li>
             </ul>

@@ -1,0 +1,29 @@
+.itemDetail {
+    display: flex;
+    border: solid 1px rgb(227, 151, 230);
+    margin: 1rem;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .itemDetail img {
+    width: 250px;
+  }
+  
+  .itemDetailContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .addToCart {
+    width: 150px;
+    margin: auto;
+    border: thin solid rgb(227, 151, 230);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+  }
+  
+  
