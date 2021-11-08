@@ -2,8 +2,9 @@ import React from 'react';
 import "../assets/Item.css";
 import { Link, useHistory } from 'react-router-dom';
 
-const Item = ({data, addToCart}) => {
+const Item = ({data}) => {
      
+    
     const history = useHistory ();
 
     let {id, name, price, img} = data;
@@ -13,10 +14,12 @@ const Item = ({data, addToCart}) => {
             <img className="img-container" src={img}  />
            <h4 className="Productos"> {name} </h4>
            <h5 className="Precio"> ${price}.00 </h5>
+           <Link to={`/Product/${id}`}> 
             <button className="Carrito-cinco">Agregar al carrito</button>
-            <Link to={`/Product/${id}`}> 
+            </Link>
+          {/*   <Link to={`/Product/${id}`}> 
           <button className="Carrito-cinco" >Ver detalles</button> 
-          </Link>
+          </Link> */}
         </div>
   
     )

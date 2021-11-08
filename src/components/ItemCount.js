@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import '../assets/ItemCount.css';
 
+
 const style = {
 	icon: {
 		fontSize : 14,
@@ -22,7 +23,7 @@ const ItemCount = function({ max=10, min=1, initial=0, getQuantity }){
 			if(counter > min){
 				const count = counter - 1;
 				setCounter(count);
-				/* {getQuantity(count)}; */
+				{getQuantity(count)}; 
 			} else{
 				setAlertMin(true);
 				setTimeout(function(){ setAlertMin(false); }, 2000);
@@ -31,7 +32,7 @@ const ItemCount = function({ max=10, min=1, initial=0, getQuantity }){
 		const addItem = function(){
 			if(counter < max){
 				setCounter(counter+1);
-				/* {getQuantity(counter+1)} */
+			  getQuantity(counter+1)
 			} else {
 				setAlertMax(true);
 				setTimeout(function(){ setAlertMax(false); }, 2000);

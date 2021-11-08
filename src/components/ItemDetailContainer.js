@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import Products from "../Products.json";
 import ItemDetail from "./ItemDetail";
-
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-
-    const [item, setItem] = useState();
+    const { id } = useParams();
+    const [item, setItem] = useState(null);
     const getItem = (data) =>
         new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (data) {
-                    resolve(data);
+                    let product = data.filter(item => item.id.toString() === id)
+                    resolve(product);
                 } else {
                     reject("No se encontro el producto");
                 }
@@ -27,7 +28,8 @@ const ItemDetailContainer = () => {
     return (
         <>
             <h2>Detalles del producto seleccionado</h2>
-            <ItemDetail item={item} />
+                                 
+            {item !== undefined && item !== null &&  <ItemDetail item={item} /> }
         </>
     );
 }
