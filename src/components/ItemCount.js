@@ -49,7 +49,7 @@ const ItemCount = function({ max=10, min=1, initial=0, getQuantity }){
 	return(
 		<>
   			<div className="card-body">
-    			<div className="row">
+    			<div className="sub-container">
   					<div className="col">
   						<a onClick={removeItem} className="btn btn-info">
   							<i style={style.icon} className="fa fa-minus"></i>
@@ -64,8 +64,8 @@ const ItemCount = function({ max=10, min=1, initial=0, getQuantity }){
   						</a>
   					</div>
   				</div>
-  				{alertMin && <div className="container"><small style={style.alert}>Limite de pedido minimo</small></div>}
-  				{alertMax && <div className="container"><small style={style.alert}>Limite de pedido máximo</small></div>}
+  				{alertMin && <div className="container-two"><small style={style.alert}>Limite de pedido minimo</small></div>}
+  				{alertMax && <div className="container-two"><small style={style.alert}>Limite de pedido máximo</small></div>}
   			</div>
 		</>
 		);

@@ -14,3 +14,9 @@
 .fa-shopping-cart {
     color:rgb(255, 255, 255);
 }
+
+.cart-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -3,17 +3,15 @@ import ItemCount from './ItemCount.js';
 import BuyButton from './BuyButton.js';
 
 const PanelContainer = function({name, productId, max, min, initial, text, onAdd, price}){
-	const [quantity, setQuantity] = useState(0);
+	const [quantity, setQuantity] = useState(null);
 
 	const getQuantity = function(counter){
-
-       
 		setQuantity(counter);
 	}
-/* 
+
 	useEffect(() => {
 		setQuantity(initial);
-	}, [initial]) */
+	}, [initial])
 	
 	return <>
 		<ItemCount 

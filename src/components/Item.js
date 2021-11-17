@@ -1,28 +1,49 @@
 import React from 'react';
-import "../assets/Item.css";
-import { Link, useHistory } from 'react-router-dom';
+import PanelContainer from '../components/PanelContainer';
+import { Link } from 'react-router-dom';
+import '../assets/Item.css';
 
-const Item = ({data}) => {
-     
-    
-    const history = useHistory ();
+const style = {
+	link: {
+		textDecoration: 'none',
+	},
+	card: {
+		marginTop: 20,
+		width: 400,
+		marginRight: 'auto',
+		marginLeft: 'auto',
+		paddingTop: 20,
+	},
+	image: {
+		width: 200,
+		heigth: 200,
+		marginRight: 'auto',
+		marginLeft: 'auto',
+		borderWidth: 0,
+	},
+}
 
-    let {id, name, price, img} = data;
-    return (
-        
-        <div className="Carrito">
-            <img className="img-container" src={img}  />
-           <h4 className="Productos"> {name} </h4>
-           <h5 className="Precio"> ${price}.00 </h5>
-           <Link to={`/Product/${id}`}> 
-            <button className="Carrito-cinco">Agregar al carrito</button>
-            </Link>
-          {/*   <Link to={`/Product/${id}`}> 
-          <button className="Carrito-cinco" >Ver detalles</button> 
-          </Link> */}
-        </div>
-  
-    )
+const Item = function({id, name, brand, price, initial, min, max, image}){
+	
+	return(
+			<div className="card align-items-stretch container" style={style.card}>
+				<Link className="Link" style={style.link} to={`/item/${id}`}>
+					<h3>{name}</h3>
+				<h5>{brand}</h5>
+				<p>${price}</p>
+	  			<img style={style.image} className="card-img-top img-thumbnail" src={image} alt={name}/>
+				  </Link>
+				<PanelContainer 
+					max={max} 
+					min={min} 
+					initial={initial} 
+					text="Agregar al carrito"
+					productId = {id}
+					name={name}
+					price={price}
+					/>
+			</div>
+		);
 }
 
 export default Item;

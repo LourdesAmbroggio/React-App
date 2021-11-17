@@ -46,14 +46,25 @@
    border: 1px solid rgb(227, 151, 230);
   }
 
-  .row {
+  .sub-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    flex-direction: row;
     align-items: center;
-    width: 50%;
   }
   
+  .card-boton{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .card-boton:hover{
+    color: rgb(227, 151, 230);
+  }
+
   .texto {
     color: black;
     font-size: 25px;
@@ -63,6 +74,13 @@
   .card-body {
    display: flex;
    justify-content: center;
-   flex-direction: column;
+   flex-direction: row;
    align-items: center;
+   
   }
+
+
+.container-two{
+  color: pink;
+}
+

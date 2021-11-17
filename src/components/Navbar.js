@@ -1,53 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
+import CartWidget from '../components/CartWidget';
+import NavBarElement from './NavBarElement.js';
 import '../assets/Navbar.css';
-import Dress from '../assets/images/R.png';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img src={Dress} width="50" />
-            DRESS{' '}
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav mx-auto">
-              <li className="nav-item">
-                <Link className="nav-link active " to="/">
-                  Inicio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Productos">
-                  Productos
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Ofertas">
-                  Ofertas
-                </Link>
-                <CartWidget />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-};
+
+const categories = [
+					{id:1, category: 'Vestidos Elegantes'},
+					{id:2, category: 'Vestidos Informales'},
+					{id:3, category: 'Vestidos Clásicos'}
+					]
+
+function Navbar() {
+	return (
+			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+				<Link className="navbar-brand" to="/">DRESS</Link>
+				<div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+					<ul className="navbar-nav ml-auto">
+		  				<NavBarElement name="Home" destination="/" />
+				      	<NavBarElement name="Productos" destination="/" />
+						<li className="nav-item dropdown">
+							<p className="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorías</p>
+							<div className="dropdown-menu" aria-labelledby="dropdown01">
+								{categories.map(category =>
+												<p className="dropdown-item">{category.category}</p>
+												)}
+							</div>
+						</li>
+						<CartWidget />
+					</ul>
+	  			</div>
+			</nav>
+		)
+}
 
 export default Navbar;

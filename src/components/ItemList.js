@@ -1,38 +1,52 @@
-import { useState, useEffect } from 'react';
-import Item from './Item';
-import '../assets/ItemList.css';
-import Products from '../Products.json';
+import React, { useEffect, useState } from 'react';
+import Item from '../components/Item';
+import Loading from '../components/Loading';
+import { useParams } from 'react-router-dom';
+import { getFirestore } from '../firebase/index';
 
-const ItemList = () => {
-  
-  const addToCart = (id) => {
-  
-  
-  }
-   
+const ItemList = function () {
+	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(true);
 
-  const [showItem, setShowItem] = useState(false);
+	const { category_id } = useParams();
 
-  useEffect(() => {
-    setTimeout(() => setShowItem(true), 2000)
-  }, [showItem])
+	useEffect(() => {
+		const db = getFirestore();
 
-  return (
-    <>
-      <div>
-        <h3 className="Productos">Productos</h3>
-        <article className="box grid-responsive">
-        { showItem ?  
-          Products.map(element => (
-            <Item key={element.id} data={element} addToCart={addToCart} />
-            ))
-          :
-          <h3 className="Productos">Aun no hay productos en la lista</h3>
-          }
-        </article>
-      </div>
-    </>
-  );
+		const itemCollection = db.collection('items');
+		let validItems = itemCollection.where('price', '>', 0);
+
+		if (category_id) {
+			validItems = validItems.where('category_id', '==', category_id);
+			console.log(validItems);
+		}
+
+		validItems.get().then((data) => {
+			if (!data.length === 0) {
+				console.log('No se encontraron productos');
+			}
+			setLoading(false);
+			setProducts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+		});
+
+	}, [category_id]);
+
+	return <>
+		{loading && <Loading />}
+		<div className='row'>
+			{products.map(product =>
+				<Item
+					id={product.id}
+					name={product.name}
+					brand={product.brand}
+					price={product.price}
+					initial={product.initial}
+					min={product.min}
+					max={product.max}
+					image={product.img}
+				/>)}
+		</div>
+	</>
 }
 
 export default ItemList;

@@ -2,3 +2,19 @@
     width: 50px;
     height: 70px;
 }
+
+.container {
+    height: 600px;
+}
+
+.Link{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(202, 52, 170);
+}
+
+.Link:hover {
+    color: rgb(251, 209, 218);
+}

@@ -1,27 +1,35 @@
-import '../src/assets/App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Ofertas from './pages/Ofertas';
-import Productos from './pages/Productos';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import React from 'react';
+import Navbar from '../src/components/Navbar';
+import Home from '../src/components/Home';
+import ItemDetailContainer from './components/ItemDetailContainer.js';
+import Cart from './components/Cart.js';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartProvider } from './context/cartContext.js';
 
-function app() {
-  return (
-    <CartProvider> 
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path ="/Ofertas" component={Ofertas} />
-          <Route exact path ="/Productos" component={Productos} />
-          <Route exact path="/Product/:id"  component={ItemDetailContainer} />
-        </Switch>
-        
-      </Router>
-    </div>
-    </CartProvider>
-  );
-} 
+function App() {
+	return (
+		<CartProvider>
+			<BrowserRouter>
+				<div>
+					<Navbar />
+					<Switch>
+						<Route exact path='/'>
+							<Home />
+						</Route>
+						<Route exact path='/category/:category_id'>
+							<Home />
+						</Route>
+						<Route path='/item/:id'>
+							<ItemDetailContainer />
+						</Route>
+						<Route path='/cart'>
+							<Cart />
+						</Route>
+					</Switch>
+				</div>
+			</BrowserRouter>
+		</CartProvider>
+	);
+}
 
-export default app;
+export default App;

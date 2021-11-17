@@ -1,37 +1,62 @@
-import { useEffect, useState } from "react";
-import Products from "../Products.json";
-import ItemDetail from "./ItemDetail";
+import React, { useEffect, useState } from 'react';
+import Loading from './Loading.js';
+import ItemDetail from './ItemDetail.js'
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from '../firebase';
 
-const ItemDetailContainer = () => {
-    const { id } = useParams();
-    const [item, setItem] = useState(null);
-    const getItem = (data) =>
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (data) {
-                    let product = data.filter(item => item.id.toString() === id)
-                    resolve(product);
-                } else {
-                    reject("No se encontro el producto");
-                }
-            }, 2000);
-        });
+const ItemDetailContainer = function(){
 
-    useEffect(() => {
-        getItem(Products)
-            .then((res) => setItem(res[0]))
-            .catch((err) => console.log(err));
+const [ item, setItem ] = useState([]);
+const [ loading, setLoading] = useState(true);
+const [ error, setError ] = useState(false);
+const { id } = useParams();
 
-    }, []);
+useEffect( () => {
+	const db = getFirestore();
 
-    return (
-        <>
-            <h2>Detalles del producto seleccionado</h2>
-                                 
-            {item !== undefined && item !== null &&  <ItemDetail item={item} /> }
-        </>
-    );
+		const itemCollection = db.collection('items');
+		const product = itemCollection.doc(id);
+
+		product.get().then((doc)=>{
+			if(doc.data() === undefined){
+				setLoading(false);
+				setError(true);
+			} else{
+				setLoading(false);
+				setItem({ id: doc.id, ...doc.data() });
+			}
+		});
+
+	}, [id]);
+
+	return(<div>
+		{	loading ? 
+			<Loading /> : error ? <>
+								  <div className="container p-3">
+									  <div className="alert alert-danger text-center" role="alert">
+	  									Oops! No pudimos encontrar el producto que estás buscando.
+									  </div>
+									  <div className="text-center">
+									  	<Link className="btn btn-info" to="/">
+									  	VOLVER AL CATÁLOGO
+									  	</Link>
+									  </div>
+								  </div>
+								  </>:
+								  <ItemDetail
+									id={item.id}
+									name={item.title}
+									brand={item.brand}
+									price={item.price}
+									description={item.description}
+									initial={item.initial}
+									max={item.max}
+									min={item.min}
+									image={item.img}
+									/>
+		}
+		</div>);
 }
 
 export default ItemDetailContainer;
