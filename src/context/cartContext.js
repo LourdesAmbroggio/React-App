@@ -8,17 +8,18 @@ export const CartProvider = function({children}){
 	const [items, setItems] = useState([]);
 
 	const addToCart = function(name, quantity, id, price){
-		const item = [...items, {'id': id, 'name': name, 'quantity': quantity, 'price': price}];
-		setItems(item);
+		const item = {
+			name,
+			quantity,
+			id,
+			price
+		};
+		setItems([...items, item]);
 	}
 
 	const removeItem = function(id){
-		if (items.length > 0) {
-			const updateItems = items.filter(function (item){
-				return item.productId !== id;
-			});
-			setItems(updateItems);
-		}
+		const item = items.filter(item => item.id !== id);
+		setItems(item);
 	}
 
 return <CartContext.Provider value={{items, setItems, addToCart, removeItem}}>

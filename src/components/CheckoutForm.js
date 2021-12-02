@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useCartContext } from '../context/cartContext';
 
 const CheckoutForm = function({getUserData, buyButton, createOrder}){
 
 	const [ emails, setEmails ] = useState([]);
 	const [ error, setError ] = useState(null);
+	const { items } = useCartContext();
 
 	const getEmailData = function(evt){
 		setEmails({...emails, [evt.target.id]: evt.target.value});
 	}
 
 	useEffect(() => {
+		console.log(`buyButton`, buyButton);
 		if(emails.email_2 && emails.email_2 !== ''){	
 			const checkMails = function(){
 				console.log('check');
@@ -47,7 +50,7 @@ const CheckoutForm = function({getUserData, buyButton, createOrder}){
 						  	</div>
 						  </div>
 						  {error && <p>Los emails deben ser iguales</p>}
-						  <button disabled={buyButton} onClick={createOrder} className="btn btn-primary">REALIZAR PEDIDO</button>
+						  <button style={{backgroundColor:'rgb(250, 170, 180, 1.2)', borderColor:'pink', fontWeight:'bold'}} disabled={ items.length === 0 ? true : buyButton} onClick={createOrder} className="btn btn-info">REALIZAR PEDIDO</button>
 						</>
 }						
 
