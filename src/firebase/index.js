@@ -3,13 +3,12 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyAY0LWpgKzW4QZBrA_X_cA7UOysenDQ7j4",
-  authDomain: "e-commerce-97e4f.firebaseapp.com",
-  projectId: "e-commerce-97e4f",
-  storageBucket: "e-commerce-97e4f.appspot.com",
-  messagingSenderId: "737870735636",
-  appId: "1:737870735636:web:a6bafcb50f546e2e7efa01",
-  measurementId: "G-KRLHFSR300"
+  apiKey: "AIzaSyA-9P7TsrRmODi3NAQwKDwJpKimHZig9sY",
+  authDomain: "tienda-f4336.firebaseapp.com",
+  projectId: "tienda-f4336",
+  storageBucket: "tienda-f4336.appspot.com",
+  messagingSenderId: "61241749532",
+  appId: "1:61241749532:web:67e703f14e6374e23cefd9"
 });
 
 export function getFirebase() {

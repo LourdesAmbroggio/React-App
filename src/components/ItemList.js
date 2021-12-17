@@ -9,15 +9,18 @@ const ItemList = function () {
 	const [loading, setLoading] = useState(true);
 
 	const { category_id } = useParams();
+	console.log(`category_id`, category_id)
 
 	useEffect(() => {
 		const db = getFirestore();
 
 		const itemCollection = db.collection('items');
 		let validItems = itemCollection.where('price', '>', 0);
+		console.log(`validItems`, validItems)
 
 		if (category_id) {
-			validItems = validItems.where('category_id', '==', category_id);
+			
+			validItems = validItems.where('category', '==', category_id);
 			console.log(validItems);
 		}
 
@@ -31,14 +34,17 @@ const ItemList = function () {
 
 	}, [category_id]);
 
+	console.log(`products`, products)
+
 	return <>
 		{loading && <Loading />}
 		<div className='row'>
 			{products.map(product =>
 				<Item
+					key={product.id}
 					id={product.id}
 					name={product.name}
-					brand={product.brand}
+					brand={product.category}
 					price={product.price}
 					initial={product.initial}
 					min={product.min}

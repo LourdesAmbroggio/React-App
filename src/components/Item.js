@@ -23,13 +23,14 @@ const style = {
 	},
 }
 
+
 const Item = function({id, name, brand, price, initial, min, max, image}){
 	
 	return(
 			<div className="card align-items-stretch container" style={style.card}>
 				<Link className="Link" style={style.link} to={`/item/${id}`}>
 					<h3>{name}</h3>
-				<h5>{brand}</h5>
+				<h5>Categoria: {brand.charAt(0).toUpperCase() + brand.slice(1)}</h5>
 				<p>${price}</p>
 	  			<img style={style.image} className="card-img-top img-thumbnail" src={image} alt={name}/>
 				  </Link>
